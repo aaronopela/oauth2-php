@@ -80,4 +80,28 @@ class OAuth2Client implements IOAuth2Client
     {
         return $this->redirectUris;
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function eraseCredentials()
+    {
+        // nothind to erase
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getRoles(): array
+    {
+        return ['ROLE_USER'];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getUserIdentifier(): string
+    {
+        return $this->getRandomId();
+    }
 }
